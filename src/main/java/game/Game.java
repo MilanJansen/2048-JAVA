@@ -8,6 +8,7 @@ public class Game {
 	public static Board BOARD = new Board(4);
 
 	public static void restart() {
+		BOARD.getScore(); //TODO give score to AI.
 		COLORS = new ColorScheme();
 		WINDOW = new Window("2048");
 		CONTROLS = new Controls();
