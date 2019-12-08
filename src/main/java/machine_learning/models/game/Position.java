@@ -1,4 +1,4 @@
-package machine_learning.model_classes;
+package machine_learning.models.game;
 
 import java.util.ArrayList;
 
@@ -14,4 +14,21 @@ public class Position {
         this.borders = borders;
         this.stages = stages;
     }
+
+    public int getEmptySpaces() {
+        return emptySpaces;
+    }
+
+    public int getEqualNumbers() {
+        return equalNumbers;
+    }
+
+    public int getBorders() {
+        return borders;
+    }
+
+    public ArrayList<int[]> getStages() {
+        return stages;
+    }
+
 }
