@@ -6,14 +6,14 @@ public class BlockMove {
     private double relativeBlockSize;
     private Position startPosition;
     private Position endPosition;
-    private Merge merge;
+    private BlockMerge blockMerge;
     private int score;
 
-    public BlockMove(double relativeBlockSize, Position startPosition, Position endPosition, Merge merge) {
+    public BlockMove(double relativeBlockSize, Position startPosition, Position endPosition, BlockMerge blockMerge) {
         this.relativeBlockSize = relativeBlockSize;
         this.startPosition = startPosition;
         this.endPosition = endPosition;
-        this.merge = merge;
+        this.blockMerge = blockMerge;
     }
 
     public BlockMove(double relativeBlockSize, Position startPosition, Position endPosition) {
@@ -31,6 +31,7 @@ public class BlockMove {
         startPosition.getStages();
 
         score += getPositionValue(relativeBlockSize, "borders", startPosition.getBorders());
+        //Get data from SQL database
 
             //TODO Ask MachineLearningController for position values.
             //int emptySpaces;
@@ -42,9 +43,9 @@ public class BlockMove {
         for(Field field: endPositionFields) {
             //TODO Ask MachineLearningController for position values.
         }
-        if(merge != null) {
-            int emptySpaces = merge.getEmptySpaces();
-            //TODO Ask MachineLearningController for merge values.
+        if(blockMerge != null) {
+            int emptySpaces = blockMerge.getEmptySpaces();
+            //TODO Ask MachineLearningController for blockMerge values.
         }
 
     }
