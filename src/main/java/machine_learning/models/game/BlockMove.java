@@ -27,7 +27,6 @@ public class BlockMove {
         String fieldName;
         startPosition.getBorders();
         startPosition.getEmptySpaces();
-        startPosition.getEqualNumbers();
         startPosition.getStages();
 
         score += getPositionValue(relativeBlockSize, "borders", startPosition.getBorders());
@@ -35,7 +34,6 @@ public class BlockMove {
 
             //TODO Ask MachineLearningController for position values.
             //int emptySpaces;
-            //int equalNumbers;
             //int borders;
             //ArrayList<int[]> stages;
         }

@@ -1,4 +1,7 @@
-package game;
+package machine_learning.controllers;
+
+import game.Game;
+import game.Tile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +11,7 @@ import java.util.List;
  * @author petrnemecek
  *
  */
-public class Board implements Cloneable {
+public class SimBoard implements Cloneable {
 
 	private int size; 						// size of the grid
 	private int score; 						// game score
@@ -21,9 +24,9 @@ public class Board implements Cloneable {
 
 	/**
 	 * {@link Constructor}
-	 * 
+	 *
 	 */
-	public Board(int size) {
+	public SimBoard(int size) {
 		super();
 		this.size = size;
 		this.emptyTiles = this.size * this.size;

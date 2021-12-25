@@ -6,8 +6,8 @@ public class MoveRanking {
     private double relativeBlockSize;
     private PositionRanking startPositionRanking;
     private PositionRanking endPositionRanking;
-    private BlockMerge blockMerge;
-    //TODO StartPosition, endPosition and blockMerge will receive point sorted by the relativeBlockSize.
+    private MergeRanking mergeRanking;
+    //TODO StartPosition, endPosition and mergeRanking will receive point sorted by the relativeBlockSize.
 
     public MoveRanking(double relativeBlockSize, PositionRanking startPositionRanking, PositionRanking endPositionRanking, BlockMerge blockMerge) {
         this.relativeBlockSize = relativeBlockSize;
