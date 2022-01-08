@@ -24,15 +24,15 @@ public class PositionRanking {
         //TODO stageHeight is not being taken into account yet.
         int currentPoints = this.stages.get(numberOfStages)[1];
 
-        this.stages.add(numberOfStages, points);
-        for(int i=0;i<=this.stages.size();i++){
-            if(this.stages.get(i)[0] == stageHeight){
+        //this.stages.add(numberOfStages, points);
+        for (int i = 0; i <= this.stages.size(); i++) {
+            if (this.stages.get(i)[0] == stageHeight) {
                 this.stages.get(i)[1] += points;
                 break;
+            } else if (i >= this.stages.size()) {
+                //this.stages.add(stage);
             }
-            else if(i >= this.stages.size()){
-                this.stages.add(stage);
-            }
+        }
     }
 
     public void addStages(ArrayList<int[]> stages) {
@@ -49,11 +49,11 @@ public class PositionRanking {
         }
     }
 
-    public ArrayList<int[]> getEmptySpaces() {
+    public ArrayList<Integer> getEmptySpaces() {
         return emptySpaces;
     }
 
-    public ArrayList<int[]> getBorders() {
+    public ArrayList<Integer> getBorders() {
         return borders;
     }
 

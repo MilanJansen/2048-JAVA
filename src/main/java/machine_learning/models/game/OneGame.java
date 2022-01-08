@@ -4,5 +4,5 @@ import java.util.ArrayList;
 
 public class OneGame {
     private int totalScore;
-    private ArrayList<BlockMove> blockMoves;
+    private ArrayList<BlockLink> blockMoves;
 }

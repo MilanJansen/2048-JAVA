@@ -15,7 +15,7 @@ public class Board implements Cloneable {
 	private int emptyTiles;					// number of tiles with zero value
 	private int initTiles = 2; 				// number of tiles board starts with (usually two tiles)
 	private boolean gameover = false; 		// game is over when 2048 tile is found
-	private String wonOrLost;				// won or lost
+	private String wonOrLost = "";				// won or lost
 	private boolean genNewTile = false;		// generate new tile when any tile moved
 	private List<List<Tile>> tiles;			// board
 

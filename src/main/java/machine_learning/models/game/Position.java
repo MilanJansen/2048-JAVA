@@ -11,19 +11,14 @@ public class Position {
     // stage: 1, amount: x
     // stage: 2, amount: x
 
-    public Position(int emptySpaces, int equalNumbers, int borders, ArrayList<int[]> stages) {
+    public Position(int emptySpaces, int borders, ArrayList<int[]> stages) {
         this.emptySpaces = emptySpaces;
-        this.equalNumbers = equalNumbers;
         this.borders = borders;
         this.stages = stages;
     }
 
     public int getEmptySpaces() {
         return emptySpaces;
-    }
-
-    public int getEqualNumbers() {
-        return equalNumbers;
     }
 
     public int getBorders() {
