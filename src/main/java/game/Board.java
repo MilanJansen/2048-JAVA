@@ -224,7 +224,7 @@ public class Board implements Cloneable {
 	}
 
 	public void moveRight() {
-		
+
 		List<Tile> moved;
 		
 		for (int row = 0; row < size; row++) {

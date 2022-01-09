@@ -56,6 +56,10 @@ public class SimBoard implements Cloneable {
 		return super.clone();
 	}
 
+	public boolean isGenNewTile() {
+		return genNewTile;
+	}
+
 	public int getSize() {
 		return size;
 	}
@@ -182,7 +186,7 @@ public class SimBoard implements Cloneable {
 	}
 
 	public void moveUp() {
-
+		genNewTile = false;
 		List<Tile> moved;
 
 		for (int row = 0; row < size; row++) {
@@ -197,7 +201,7 @@ public class SimBoard implements Cloneable {
 	}
 
 	public void moveDown() {
-
+		genNewTile = false;
 		List<Tile> moved;
 
 		for (int row = 0; row < size; row++) {
@@ -212,7 +216,7 @@ public class SimBoard implements Cloneable {
 	}
 
 	public void moveLeft() {
-
+		genNewTile = false;
 		List<Tile> moved;
 
 		for (int row = 0; row < size; row++) {
@@ -227,7 +231,7 @@ public class SimBoard implements Cloneable {
 	}
 
 	public void moveRight() {
-		
+		genNewTile = false;
 		List<Tile> moved;
 		
 		for (int row = 0; row < size; row++) {
@@ -302,7 +306,7 @@ public class SimBoard implements Cloneable {
 			} while (getTileAt(row, col).getValue() != 0);
 			setTileAt(row, col, new Tile(value, row, col));
 			emptyTiles--;
-			genNewTile = false;
+			//genNewTile = false;
 		}
 	}
 

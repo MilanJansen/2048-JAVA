@@ -49,6 +49,8 @@ public class RankingController {
             default:
                 break;
         }
+        Game.BOARD.isGameOver();
+        Game.WINDOW.repaint();
     }
 
     public void takeStepSim(int step) {
@@ -68,6 +70,7 @@ public class RankingController {
             default:
                 break;
         }
+        simBoard.isGameOver();
     }
 
 
@@ -79,6 +82,18 @@ public class RankingController {
             }
             for (int j = 0 ; j < pathsArray.get(i).size() ; j++) {
                 takeStepSim(pathsArray.get(i).get(j));
+                if(!simBoard.isGenNewTile()) {
+                    for (int k = 0 ; k < pathsArray.size() ; k++) {
+                        pathsArray.get(k);
+                        if() {
+                            pathsArray.remove();
+                            //pathsArray.get(i).get(0) t/m pathsArray.get(i).get(j)
+                            k--;
+                        }
+                    }
+
+                    pathsArray.get(i); //Van deze alles t/m j
+                }
                 //TODO When reaching a move that is not possible. Skip all paths that are identical to this path to this point (iteration number).
             }
         }
