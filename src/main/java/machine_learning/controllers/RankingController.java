@@ -3,6 +3,7 @@ package machine_learning.controllers;
 import game.Game;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 
 public class RankingController {
@@ -25,7 +26,7 @@ public class RankingController {
 //                TimeUnit.SECONDS.sleep(3);
 //            }catch(InterruptedException e){}
 //
-//            int step = choosePath();
+//            int step = choosePath(pathsArray);
 //            takeStep(step);
 //        }
 
@@ -50,9 +51,8 @@ public class RankingController {
         }
     }
 
-    public void walkPath(int[] steps) {
-        for (int i = 0 ; i < steps.length ; i++)
-        switch (i) {
+    public void takeStepSim(int step) {
+        switch (step) {
             case 1:
                 simBoard.moveDown();
                 break;
@@ -71,11 +71,17 @@ public class RankingController {
     }
 
 
-    public int choosePath() {
-        try {
-            simBoard = (SimBoard)Game.BOARD.clone();
-        }catch (CloneNotSupportedException e){}
-
+    public int choosePath(ArrayList<ArrayList<Integer>> pathsArray) {
+        for (int i = 0 ; i < pathsArray.size() ; i++) {
+            try {
+                simBoard = (SimBoard) Game.BOARD.clone();
+            } catch (CloneNotSupportedException e) {
+            }
+            for (int j = 0 ; j < pathsArray.get(i).size() ; j++) {
+                takeStepSim(pathsArray.get(i).get(j));
+                //TODO When reaching a move that is not possible. Skip all paths that are identical to this path to this point (iteration number).
+            }
+        }
 
 
 
@@ -117,7 +123,7 @@ public class RankingController {
         // base case: if the combination size is `k`, print it
         if (out.size() == k)
         {
-            //System.out.println(out);
+            System.out.println(out);
             ArrayList<Integer> pathArray = new ArrayList<>();
             for (Iterator<Integer> z = out.iterator(); z.hasNext();) {
                 pathArray.add(z.next());
